@@ -43,4 +43,6 @@ jupyter notebook
 ```bash
 pip install tensorboard
 conda install pandas
+conda install matplotlib
+pip install scikit-image
 ```
