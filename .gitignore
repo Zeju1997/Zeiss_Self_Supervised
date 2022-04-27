@@ -8,6 +8,7 @@ venv/
 weights
 .ipynb_checkpoints/
 .idea/
+target_jigsaw.pt
 
 # checkpoints
 checkpoints/
