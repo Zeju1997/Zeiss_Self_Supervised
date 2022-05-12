@@ -8,7 +8,7 @@ venv/
 weights
 .ipynb_checkpoints/
 .idea/
-target_jigsaw.pt
+real.pt
 
 # checkpoints
 checkpoints/
@@ -18,3 +18,6 @@ data/
 
 # results
 results
+
+count_classes.py
+save_depth_imgs.py
