@@ -13,6 +13,9 @@ See our template dataset class 'template_dataset.py' for more details.
 import importlib
 import torch.utils.data
 from datasets.base_dataset import BaseDataset
+from datasets.cityscapes_dataset import CityscapesDataset
+from datasets.gta_dataset import GTA5Dataset
+from datasets.retouch_dataset import Retouch_dataset
 
 
 def find_dataset_using_name(dataset_name):

@@ -1,12 +1,10 @@
 import skimage.io as io
 import matplotlib.pylab as plt
 import numpy as np
-from utils import mhd
 
 from scipy import ndimage
 from scipy.ndimage.interpolation import zoom
 from torch.utils.data import Dataset
-from medpy.io import load
 import random
 
 import torch
@@ -35,8 +33,8 @@ class Retouch_dataset(Dataset):
                  ext='.png'):
         self.transform = transform  # using transform in torch!
         self.split = split
-        self.sample_list = open(os.path.join(list_dir,
-                                             self.split + '.txt')).readlines()
+        self.sample_list = open(list_dir).readlines()
+        
         self.data_dir = base_dir
         self.loader = pil_loader
         self.to_tensor = transforms.Compose(
@@ -77,12 +75,13 @@ class Retouch_dataset(Dataset):
 
         transform_avaliable = self.transform is not None and self.is_train
         do_aug = transform_avaliable and random.random() > 0.5
-        '''
+
         sample = {'image': data.repeat(3, 1, 1),
                   'case_name': sample_name}
         '''
         sample = {'image': data,
                   'case_name': sample_name}
+        '''
         # print((label_idx==0).sum()/512**2)
         return sample
 
